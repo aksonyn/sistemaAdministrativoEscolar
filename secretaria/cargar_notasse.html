@@ -1,0 +1,626 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Secretaria</title>
+
+		<!-- Agregar un icono a tu página -->
+		<link rel="shortcut icon" type="image/z-icon" href="imagenes/ve.ico">
+
+		<!-- Indica al navegador aceptar los acentos -->
+		<meta charset= "UTF-8">
+
+		<!-- Permite que se adapte a todos los tamaños -->
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+		<!-- Para agregar un archivo CSS -->
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/style.min.css">
+
+		<script src="js/style.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+
+		<!-- Select2 -->
+		<link href="css/select2.min.css" rel="stylesheet" />
+		<script src="js/select2.min.js"></script>
+
+		<script type="text/javascript">
+			// Solo permite ingresar numeros.
+			function soloNumeros(e){
+				var key = window.Event ? e.which : e.keyCode
+				return (key >= 48 && key <= 57)
+			}
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".js-example-basic-multiple").select2();
+			});
+		</script>
+
+	</head>
+
+	</head>
+
+	<body>
+		<header id="fix">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="col-md-3">
+							<img src="imagenes/logo.png" class="logo">
+						</div>
+
+						<div class="col-md-6">
+							<h1 class="text-center" style="position: relative; top: 15px;">
+								U.E José Ignacio Cabrujas 
+							</h1>
+						</div>
+
+						<div class="col-md-3">
+							<img src="imagenes/logo1.png" class="pull-right logo">
+						</div>						
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3 col-md-2" id="side">
+					<ul class="nav nav-sidebar" >
+						<li class="active"><a href="secretaria.html">Inicio</a></li>
+						<li><a href="consultar_inscripciónse.html">Consultar inscripción</a></li>
+						<li><a href="registrar_inscripciónse.html">Registrar inscripción</a></li>
+						<li><a href="modificar_inscripciónse.html">Modificar inscripción</a></li>
+						<li><a href="carga_notasse.html">Carga de Notas</a></li>					
+						<li><a href="reportesse.html">Reportes</a></li>
+						<li><a href="logout.html">Salir</a></li>						
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id ="clear" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ">
+			<div class="page-header">
+				<h1>Secretaria</h1>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-danger">
+						<div class="panel-heading">
+							<h3 class="panel-title">Carga de notas</h3>
+						</div>
+
+						<div class="panel-body">
+							<fieldset>
+								<div class="col-md-12">
+									
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="id_asignatura">Asignatura:</label>
+											<select id="id_asignatura" name="asignatura" class="form-control" required>
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+												<option value="6">6</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="id_ci">CI:</label>
+											<input id="id_ci" name="ci" type="text" class="form-control" placeholder="CI o CIE" maxlength="10" onKeyPress="return soloNumeros(event)" required />
+										</div>
+									</div>
+
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="id_estudiante">Estudiante:</label>
+											<input id="id_estudiante" name="estudiante" type="text" class="form-control" placeholder="Estudiante" value="" maxlength="10" />
+										</div>
+									</div>
+									
+									<div class="col-md-12">
+									
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="Momento">Momento:</label>
+											<select id="Momento" name="Momento" class="form-control" required>
+												<option value="1">1er Momento</option>
+												<option value="2">2do Momento</option>
+												<option value="3">3er Momento</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="grado">Grado:</label>
+											<input id="grado" name="grado" type="text" class="form-control" placeholder="Grado" maxlength="10" onKeyPress="return soloNumeros(event)" required />
+										</div>
+									</div>
+
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="turno">Turno:</label>
+											<input id="turno" name="estudiante" type="text" class="form-control" placeholder="Turno" value="" maxlength="10" />
+										</div>
+									</div>
+									
+								</div>
+
+								<div class="col-md-12">
+									<hr>
+								</div>
+								
+								<div class="col-md-12">
+								
+									<dir class="col-md-6">
+										<div class="form-group">
+											<label for="">Items a evaluar:</label>
+											
+										</div>
+									</dir>
+								</div>
+
+								<div class="col-md-12">
+
+									<dir class="col-md-6">
+										<div class="form-group">
+											<label for="">Item 1:</label>
+											<input id="" name="" type="text" class="form-control" placeholder="Item 1" value="" maxlength="10" required />
+										</div>
+									</dir>
+
+									<div class="col-md-6">
+										<br><br>
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">E
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">PL
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">AP
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">RR
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">SL
+										</label>						
+									</div>
+
+								</div>
+
+								<div class="col-md-12">
+
+									<dir class="col-md-6">
+										<div class="form-group">
+											<label for="">Item 2:</label>
+											<input id="" name="" type="text" class="form-control" placeholder="Item 2" value="" maxlength="10" required />
+										</div>
+									</dir>
+
+									<div class="col-md-6">
+										<br><br>
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">E
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">PL
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">AP
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">RR
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">SL
+										</label>						
+									</div>
+
+								</div>
+
+								<div class="col-md-12">
+
+									<dir class="col-md-6">
+										<div class="form-group">
+											<label for="">Item 3:</label>
+											<input id="" name="" type="text" class="form-control" placeholder="Item 3" value="" maxlength="10" required />
+										</div>
+									</dir>
+
+									<div class="col-md-6">
+										<br><br>
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">E
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">PL
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">AP
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">RR
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">SL
+										</label>						
+									</div>
+
+								</div>								
+
+								<div class="col-md-12">
+
+									<dir class="col-md-6">
+										<div class="form-group">
+											<label for="">Item 4:</label>
+											<input id="" name="" type="text" class="form-control" placeholder="Item 4" value="" maxlength="10" required />
+										</div>
+									</dir>
+
+									<div class="col-md-6">
+										<br><br>
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">E
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">PL
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">AP
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">RR
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">SL
+										</label>						
+									</div>
+
+								</div>
+
+								<div class="col-md-12">
+
+									<dir class="col-md-6">
+										<div class="form-group">
+											<label for="">Item 5:</label>
+											<input id="" name="" type="text" class="form-control" placeholder="Item 5" value="" maxlength="10" required />
+										</div>
+									</dir>
+
+									<div class="col-md-6">
+										<br><br>
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">E
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">PL
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">AP
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">RR
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">SL
+										</label>						
+									</div>
+
+								</div>
+
+								<div class="col-md-12">
+
+									<dir class="col-md-6">
+										<div class="form-group">
+											<label for="">Item 6:</label>
+											<input id="" name="" type="text" class="form-control" placeholder="Item 6" value="" maxlength="10" required />
+										</div>
+									</dir>
+
+									<div class="col-md-6">
+										<br><br>
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">E
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">PL
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">AP
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">RR
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">SL
+										</label>						
+									</div>
+
+								</div>
+
+								<div class="col-md-12">
+
+									<dir class="col-md-6">
+										<div class="form-group">
+											<label for="">Item 7:</label>
+											<input id="" name="" type="text" class="form-control" placeholder="Item 7" value="" maxlength="10" required />
+										</div>
+									</dir>
+
+									<div class="col-md-6">
+										<br><br>
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">E
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">PL
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">AP
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">RR
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">SL
+										</label>						
+									</div>
+
+								</div>
+
+								<div class="col-md-12">
+									<dir class="col-md-6">
+										<div class="form-group">
+											<label for="">Item 7:</label>
+											<input id="" name="" type="text" class="form-control" placeholder="Item 7" value="" maxlength="10" required />
+										</div>
+									</dir>
+
+									<div class="col-md-6">
+										<br><br>
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">E
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">PL
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">AP
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">RR
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">SL
+										</label>						
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="alert alert-danger">
+										<p class="text-center"><strong>Leyenda:</strong> E: Excelente, PL: Proceso Logrado, AP: Avanza en el Proceso, RR: Requiere Refuerzo, SL : Sin  lograr</p>
+									</div>									
+								</div>
+
+								<div class="col-md-12">
+									<div class="col-md-12">
+								
+									<dir class="col-md-6">
+										<div class="form-group">
+											<label for="">Habitos de Trabajo y Actitudes:</label>
+											
+										</div>
+									</dir>
+								</div>
+								
+								<div class="col-md-12">
+									<dir class="col-md-6">
+										<div class="form-group">
+											<label for="">Mantiene un nivel de atención adecuado</label>
+										</div>
+									</dir>
+
+									<div class="col-md-6">
+										<br>
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">S
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">CS
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">AV
+										</label>
+						
+									</div>
+								</div>
+								
+								<div class="col-md-12">
+									<dir class="col-md-6">
+										<div class="form-group">
+											<label for="">Entrega a tiempo sus trabajos</label>
+										</div>
+									</dir>
+
+									<div class="col-md-6">
+										<br>
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">S
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">CS
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">AV
+										</label>
+						
+									</div>
+								</div>
+								
+								<div class="col-md-12">
+									<dir class="col-md-6">
+										<div class="form-group">
+											<label for="">Sigue Instrucciones</label>
+										</div>
+									</dir>
+
+									<div class="col-md-6">
+										<br>
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">C
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">CS
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">AV
+										</label>
+						
+									</div>
+								</div>
+								
+								<div class="col-md-12">
+									<dir class="col-md-6">
+										<div class="form-group">
+											<label for="">Trabaja en equipo</label>
+										</div>
+									</dir>
+
+									<div class="col-md-6">
+										<br>
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">S
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">CS
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">AV
+										</label>
+						
+									</div>
+								</div>
+								
+								<div class="col-md-12">
+									<dir class="col-md-6">
+										<div class="form-group">
+											<label for="">Es Participativo</label>
+										</div>
+									</dir>
+
+									<div class="col-md-6">
+										<br>
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">S
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">CS
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">AV
+										</label>
+						
+									</div>
+								</div>
+								
+								<div class="col-md-12">
+									<dir class="col-md-6">
+										<div class="form-group">
+											<label for="">Asiste puntualmente a clases</label>
+										</div>
+									</dir>
+
+									<div class="col-md-6">
+										<br>
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">S
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">CS
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" value="">AV
+										</label>
+						
+									</div>
+								</div>
+								
+								<div class="col-md-12">
+									<div class="alert alert-danger">
+										<p class="text-center"><strong>Leyenda:</strong> S: Siempre, CS: Casi siempre, AV: Algunas veces</p>
+									</div>									
+								</div>
+								
+								<div class="col-md-12">
+									<hr>
+								</div>
+
+								<div class="col-md-12">
+									<div class="col-md-offset-4 col-md-4">
+										<input  id="" class="btn btn-lg btn-danger btn-block" type="submit" value="Cargar Notas">
+									</div>
+								</div>
+
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
